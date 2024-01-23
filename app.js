@@ -1,12 +1,11 @@
 
- const iva = 0.21, descuento=0.1;
- let opcion;
-
+ const iva = 0.21, descuento=0.1
+ let opcion, palabraClave
 
 /**
  * crear funcion para que mostrar mas informacion de los productos
  * crear funcion para aplicar descuento + iva
- * crear funcion para busqueda y filtrado de producto
+ * crear funcion para busqueda y filtrado de producto XXXX
  * crear funcion para mostrar carrito del usuario
  * crear funcion para borrar producto del carrito
  * 
@@ -17,16 +16,16 @@
  */
 
  let misProductos = [
-    {id: 1, nombre:"Cuaderno",descipcion: "Este producto es un cuaderno para escribir", precio: 500},
-    {id: 2, nombre:"Lapiz",descipcion: "Este producto es un Lapiz para escribir", precio: 100},
-    {id: 3, nombre:"Goma",descipcion: "Este producto es un Goma para borrar", precio: 50},
-    {id: 4, nombre:"Hojas",descipcion: "Este producto es un Hojas para escribir", precio: 300},
-    {id: 5, nombre:"Plasticola",descipcion: "Este producto es un Plasticola para pegar", precio: 150},
-    {id: 6, nombre:"Carpeta",descipcion: "Este producto es un Carpeta para hojas", precio: 1050},
-    {id: 7, nombre:"Cartuchera",descipcion: "Este producto es un Cartuchera para utiles escoladres", precio: 600},
-    {id: 8, nombre:"Lapicera",descipcion: "Este producto es un Lapicera para escribir", precio: 200},
-    {id: 9, nombre:"Tijera",descipcion: "Este producto es un Tijera de plastico escolar", precio: 280},
-    {id: 10, nombre:"Caratula",descipcion: "Este producto es un Caratua separadora para carpetas", precio: 80}
+    {id: 1, nombre:"CUADERNO",descipcion: "Este producto es un cuaderno para escribir", precio: 500},
+    {id: 2, nombre:"LAPIZ",descipcion: "Este producto es un Lapiz para escribir", precio: 100},
+    {id: 3, nombre:"GOMA",descipcion: "Este producto es un Goma para borrar", precio: 50},
+    {id: 4, nombre:"HOJAS",descipcion: "Este producto es un Hojas para escribir", precio: 300},
+    {id: 5, nombre:"PLASTICOLA",descipcion: "Este producto es un Plasticola para pegar", precio: 150},
+    {id: 6, nombre:"CARPETA",descipcion: "Este producto es un Carpeta para hojas", precio: 1050},
+    {id: 7, nombre:"CARTUCHERA",descipcion: "Este producto es un Cartuchera para utiles escoladres", precio: 600},
+    {id: 8, nombre:"LAPICERA",descipcion: "Este producto es un Lapicera para escribir", precio: 200},
+    {id: 9, nombre:"TIJERA",descipcion: "Este producto es un Tijera de plastico escolar", precio: 280},
+    {id: 10, nombre:"CARATULA",descipcion: "Este producto es un Caratua separadora para carpetas", precio: 80}
  ]
 
 /**
@@ -41,13 +40,19 @@ let carritoDelUsuario=[];
 */
 function itemSearch(palabraClave){
     let elemento = misProductos.find((x) => x.nombre === palabraClave)
-    console.log(`\nID ${elemento.id} \nNOMBRE: ${elemento.nombre} \nDESCRIPCION: ${elemento.descipcion} \nPRECIO: ${elemento.precio}`)
+    if(elemento){
+        console.log(`\nID ${elemento.id} \nNOMBRE: ${elemento.nombre} \nDESCRIPCION: ${elemento.descipcion} \nPRECIO: ${elemento.precio}`)
+    }else{
+        console.log("No se encontro el producto.\n")
+    }
 }
 
 
 function itemAdd(){
 
 }
+
+
 
 alert("Bienvenido a la tienda \n Abra la consola para visualizar los productos.")
 console.log("Catalogo de Productos: ")
@@ -64,8 +69,10 @@ switch (opcion){
         break;
 
     case 2:
-        itemSearch(prompt("Ingrese el nombre del producto"))
+        palabraClave = prompt("Ingrese el nombre del producto").toUpperCase()
+        itemSearch(palabraClave)
         break;
+
 
     case 3:
 
