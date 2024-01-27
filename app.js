@@ -5,15 +5,6 @@
     let opcion, palabraClave, importe = 0, carritoConDescuento
     let carritoDelUsuario = [];
 
-    /**
-     * crear funcion para aplicar descuento
-     * crear funcion para busqueda y filtrado de producto                       HECHO
-     * crear funcion para mostrar carrito del usuario                           HECHO
-     * crear funcion para borrar producto del carrito
-     * crear funcion agregar producto al carrito                                HECHO
-     * 
-    */
-
     const Producto = function (id, nombre, descripcion, precio) {
         this.id = id
         this.nombre = nombre
